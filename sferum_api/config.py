@@ -1,16 +1,16 @@
-vk_conversation_ids = [
-    2000000001,
-    2000000002,
-    2000000003,
-]
+from environs import Env
 
-client_remixdsid = "copy remixdsid here"
+env = Env()
+env.read_env()
 
+vk_conversation_ids = env.list('VK_CONVERSATION_IDS')
 
+client_remixdsid = env.str('REMIXDSID')
 
+message_text = env.str('MESSAGE_TEXT')
 
+start_delivery = env.str('START_DELIVERY')
 
-# !!!!!!!   do not edit   !!!!!!!
-lp_version = 19
-v = "5.223"
-app_id = 8202606
+lp_version = env.int('LP_VERSION')
+v = env.str('V')
+app_id = env.int('APP_ID')
